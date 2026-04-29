@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test,expect } from '@playwright/test';
 import * as allure from 'allure-js-commons';
 
 test("Amazon footer automation test using following sibling", async ({ page }) => {
@@ -10,8 +10,11 @@ test("Amazon footer automation test using following sibling", async ({ page }) =
   let linkTexts = "";
 
   await allure.step('Fetch footer links', async () => {
-    linkTexts = await page
-      .locator("//div[text()='Make Money with Us']/following-sibling::ul")
+    const section = page.getByText("Make Money with Us");
+    await expect(section).toBeVisible();
+
+    const linkTexts = await section
+      .locator("xpath=following-sibling::ul")
       .innerText();
   });
 

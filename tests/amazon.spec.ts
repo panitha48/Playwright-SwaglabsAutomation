@@ -11,6 +11,7 @@ test("Amazon footer automation test using following sibling", async ({ page }) =
 
   await allure.step('Fetch footer links', async () => {
    const footer = page.locator("//div[text()='Make Money with Us']");
+   //wait for footer to be visible
    await footer.scrollIntoViewIfNeeded();
   //await footer.waitFor();
 

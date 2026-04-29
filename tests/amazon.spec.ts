@@ -14,6 +14,7 @@ test("Amazon footer automation test using following sibling", async ({ page }) =
    //wait for footer to be visible
    await footer.scrollIntoViewIfNeeded();
   //await footer.waitFor();
+  await page.waitForTimeout(3000);
 
     const linkTexts = await footer
       .locator("xpath=following-sibling::ul")

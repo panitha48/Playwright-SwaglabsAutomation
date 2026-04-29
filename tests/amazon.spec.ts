@@ -10,10 +10,10 @@ test("Amazon footer automation test using following sibling", async ({ page }) =
   let linkTexts = "";
 
   await allure.step('Fetch footer links', async () => {
-    const section = page.getByText("Make Money with Us");
-    await expect(section).toBeVisible();
+   const footer = page.locator("//div[text()='Make Money with Us']");
+  await footer.waitFor();
 
-    const linkTexts = await section
+    const linkTexts = await footer
       .locator("xpath=following-sibling::ul")
       .innerText();
   });

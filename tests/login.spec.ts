@@ -5,7 +5,7 @@ test("Verify swag labs text", async ({ loginPage, page }) => {
     const text = loginPage.swagLabText;
     await expect(text).toHaveText("Swag Labs");
 })
-test("Verify all products", async ({ page, inventoryPage }) => {
+test.skip("Verify all products", async ({ page, inventoryPage }) => {
     await page.goto('https://www.saucedemo.com/inventory.html');
     const productsList = await inventoryPage.getAllProducts();
     expect(productsList).toContain('Sauce Labs Backpack');

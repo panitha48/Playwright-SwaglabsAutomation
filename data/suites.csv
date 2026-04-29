@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","0","Verify all products","chromium","2026-04-29","skipped","2026-04-29","","login.spec.ts","",""
+"","0","Verify Login functionality","chromium","2026-04-29","skipped","2026-04-29","","example1.spec.ts","",""
+"","2987","Add product to the cart","chromium","2026-04-29","passed","2026-04-29","","endtoend.spec.ts","",""
+"","0","2.Create user via API and verify user on the UI and delete user via API","chromium","2026-04-29","skipped","2026-04-29","","example2.spec.ts","",""
+"","4651","Amazon footer automation test using following sibling","chromium","2026-04-29","passed","2026-04-29","","amazon.spec.ts","",""
+"","1104","authenticate","setup","2026-04-29","passed","2026-04-29","","auth.setup.ts","",""
+"","1327","Verify swag labs text","chromium","2026-04-29","passed","2026-04-29","","login.spec.ts","",""

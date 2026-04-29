@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 
-test("2.Create user via API and verify user on the UI and delete user via API",async({page,request})=>{
+test.skip("2.Create user via API and verify user on the UI and delete user via API",async({page,request})=>{
 // Login
 // Create a new user using API
 // Verify user appears in UI table

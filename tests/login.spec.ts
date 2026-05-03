@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/fixtures';
+import { test, expect } from '../fixtures/base-fixture';
 
 test("Verify swag labs text", async ({ loginPage, page }) => {
     await page.goto('https://www.saucedemo.com/inventory.html');

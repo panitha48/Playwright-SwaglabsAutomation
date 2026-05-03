@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import env from './config/env';
+import { BASE_URLS, ENV } from './config/env';
 
 /**
  * Read environment variables from file.
@@ -30,8 +30,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: env.baseURL,
-
+    baseURL: BASE_URLS[ENV],
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
@@ -45,21 +44,28 @@ export default defineConfig({
       name: 'setup',
       testMatch: /.*\.setup\.ts/,
     },
-    // {
-    //   name: 'tests',
-    //   use: {
-    //     storageState: 'auth.json', // 🔥 reuse login
-    //   },
-    //   dependencies: ['setup'],
-    // },
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-        storageState: 'auth.json'
-      },
-      dependencies: ['setup'],
+   //Admin / standard user
+  {
+    name: 'admin-chromium',
+    use: {
+      ...devices['Desktop Chrome'],
+      storageState: 'admin.json',
+     
     },
+     grep: /@admin/,
+    dependencies: ['setup'],
+  },
+
+  //Locked / another user
+  {
+    name: 'user-chromium',
+    use: {
+      ...devices['Desktop Chrome'],
+      storageState: 'user.json',
+    },
+      grep: /@user/,
+    dependencies: ['setup'],
+  },
 
     // {
     //   name: 'firefox',
